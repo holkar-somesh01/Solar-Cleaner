@@ -13,5 +13,7 @@
             "source": "/(.*)",
             "destination": "/"
         }
-    ]
+    ],
+    "source": "/feedback/:type",
+    "destination": "/api/feedback/:id"
 }
