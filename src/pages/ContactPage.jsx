@@ -51,8 +51,8 @@ const ContactPage = () => {
         return () => clearInterval(interval); // Cleanup on component unmount
     }, [images.length])
     return (
-        <div className="pt-10">
-            <div id="contact" className="bg-gray-100 min-h-full flex flex-col justify-center items-center px-4 py-10">
+        <div id="contact" className="pt-10">
+            <div className="bg-gray-100 min-h-full flex flex-col justify-center items-center px-4 py-10">
                 <div className="text-center mb-12">
                     <h1 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h1>
                     <p className="text-lg text-gray-600">
@@ -84,7 +84,7 @@ const ContactPage = () => {
                     </div>
                     <div className="bg-gradient-to-br from-yellow-50 to-white shadow-xl rounded-xl p-8 h-full">
                         <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center border-b-2 border-yellow-500 pb-4">
-                            Our Details
+                            𝖮𝗎𝗋 𝖣𝖾𝗍𝖺𝗂𝗅𝗌
                         </h2>
                         <ul className="grid gap-8">
                             <li className="flex items-start group cursor-pointer">

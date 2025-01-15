@@ -58,14 +58,31 @@ const Service = () => {
 
     return (
         <>
-            <section id="services" className="bg-white pt-10 h-full flex items-center justify-center">
-                <div className="container mx-auto text-center overflow-hidden">
+            <section id="service" className="bg-white pt-7 h-full flex items-center justify-center">
+                <div className="mx-auto text-center overflow-hidden">
                     <motion.h2
                         initial={{ y: -100, opacity: 0 }}
                         whileInView={{ y: 10, opacity: 1 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="text-6xl font-bold mb-12 mt-12" >Our Services</motion.h2>
-                    <div className="relative  flex gap-6 animate-scroll p-10">
+                        className="md:text-6xl text-5xl font-bold p-8" >Our Services</motion.h2>
+                    <div className="relative flex gap-6 animate-scroll p-10">
+                        {Services.map((item, index) => (
+                            <div
+                                key={index}
+                                className="card flex-shrink-0 bg-white shadow-lg rounded-lg p-4 w-64 lg:w-1/3 md:w-1/3 min-w-[calc(33.333%-1rem)] cursor-pointer"
+                            >
+                                <img
+                                    src={item.image}
+                                    alt={item.name}
+                                    className="w-full h-48 rounded-lg object-cover mb-4"
+                                />
+                                <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
+                                <p className="text-gray-600">{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* <div className="relative  flex gap-6 animate-scroll p-10">
                         {Services.map((item, index) => (
                             <div
                                 key={index}
@@ -80,7 +97,7 @@ const Service = () => {
                                 <p className="text-gray-600">{item.desc}</p>
                             </div>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
             </section>
         </>

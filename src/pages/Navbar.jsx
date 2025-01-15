@@ -22,13 +22,13 @@ const Navbar = () => {
                         <Link to="/" className="hover:text-yellow-500">Home</Link>
                     </li>
                     <li>
-                        <Link to="/service" className="hover:text-yellow-500">Services</Link>
+                        <a href="#service" className="hover:text-yellow-500">Services</a>
                     </li>
                     <li>
-                        <Link to="/about" className="hover:text-yellow-500">About</Link>
+                        <a href="#about" className="hover:text-yellow-500">About</a>
                     </li>
                     <li>
-                        <Link to="/contact" className="hover:text-yellow-500">Contact</Link>
+                        <a href="#contact" className="hover:text-yellow-500">Contact</a>
                     </li>
                 </ul>
 
@@ -53,21 +53,19 @@ const Navbar = () => {
                     </svg>
                 </button>
             </div>
-
-            {/* Mobile Dropdown Menu with Animation */}
             {isOpen && <div className={`md:hidden bg-transparent  text-center space-y-2 px-4 py-4 ${isOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out`}>
                 <ul className={`space-y-2 ${isOpen ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}>
                     <li onClick={e => setIsOpen(false)} className="font-semibold">
                         <Link to="/" className="block hover:text-yellow-500">Home</Link>
                     </li>
                     <li onClick={e => setIsOpen(false)} className="font-semibold">
-                        <Link to="/service" className="block hover:text-yellow-500">Services</Link>
+                        <a href="#service" className="block hover:text-yellow-500">Services</a>
                     </li>
                     <li onClick={e => setIsOpen(false)} className="font-semibold">
-                        <Link to="/about" className="block hover:text-yellow-500">About</Link>
+                        <a href="#about" className="block hover:text-yellow-500">About</a>
                     </li>
                     <li onClick={e => setIsOpen(false)} className="font-semibold">
-                        <Link to="/contact" className="block hover:text-yellow-500">Contact</Link>
+                        <a href="#contact" className="block hover:text-yellow-500">Contact</a>
                     </li>
                 </ul>
             </div>}
