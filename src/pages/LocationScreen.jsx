@@ -3,80 +3,63 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const LocationScreen = () => {
-    const [location, setLocation] = useState({
-        latitude: 20.03666,  // Example latitude
-        longitude: 75.24319, // Example longitude
-        errorMessage: null,
-    });
-
-    // Replace with the actual coordinates you get from the link
-    const locationFromGoogleMaps = {
-        latitude: 20.0015,  // Latitude of the location from the link
-        longitude: 75.2020, // Longitude of the location from the link
-    };
-
+    const shopLocation = {
+        latitude: 20.0015,
+        longitude: 75.2020,
+    }
+    const [address, setAddress] = useState(null);
     useEffect(() => {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    setLocation({
-                        latitude: position.coords.latitude,
-                        longitude: position.coords.longitude,
-                        errorMessage: null,
-                    });
-                },
-                (error) => {
-                    setLocation({
-                        latitude: null,
-                        longitude: null,
-                        errorMessage: error.message,
-                    });
-                }
-            );
-        } else {
-            setLocation({
-                latitude: null,
-                longitude: null,
-                errorMessage: 'Geolocation is not supported by this browser.',
-            });
-        }
-    }, []);
+        const getAddress = async () => {
+            try {
+                const response = await fetch(
+                    `https://nominatim.openstreetmap.org/reverse?lat=${shopLocation.latitude}&lon=${shopLocation.longitude}&format=json`
+                );
+                const data = await response.json();
+                setAddress(data.display_name);
+            } catch (error) {
+                console.error("Error fetching address:", error);
+                setAddress("Address not found.");
+            }
+        };
+
+        getAddress();
+    }, [shopLocation]);
 
     return (
-        <div>
-            <h2>Your Location</h2>
-            {location.errorMessage ? (
-                <p>Error: {location.errorMessage}</p>
-            ) : (
-                <>
-                    <p>
-                        Latitude: {location.latitude} <br />
-                        Longitude: {location.longitude}
-                    </p>
+        <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10 z-0">
+            <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Shop Location</h2>
 
-                    {/* Check if both latitude and longitude are valid numbers */}
-                    {location.latitude && location.longitude && !isNaN(location.latitude) && !isNaN(location.longitude) && (
-                        <MapContainer
-                            center={[location.latitude, location.longitude]}
-                            zoom={13} // Set zoom level
-                            style={{ height: '400px', width: '100%', zIndex: 0 }}
-                        >
-                            <TileLayer
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                            {/* Marker for your current location */}
-                            <Marker position={[location.latitude, location.longitude]}>
-                                <Popup>Your location</Popup>
-                            </Marker>
+            <p className="text-xl font-semibold  mb-6 text-center bg-slate-100 text-black p-4 rounded-lg shadow-lg">
+                Here is the location of our shop:
+            </p>
 
-                            {/* Marker for the location from Google Maps */}
-                            <Marker position={[locationFromGoogleMaps.latitude, locationFromGoogleMaps.longitude]}>
-                                <Popup>Location from Google Maps</Popup>
-                            </Marker>
-                        </MapContainer>
-                    )}
-                </>
-            )}
+            <MapContainer
+                center={[shopLocation.latitude, shopLocation.longitude]}
+                zoom={13}
+                style={{ height: '400px', width: '100%', zIndex: 0 }}
+                className="rounded-lg shadow-md"
+            >
+                <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                <Marker position={[shopLocation.latitude, shopLocation.longitude]}>
+                    <Popup>Our Shop Location</Popup>
+                </Marker>
+            </MapContainer>
+            <div className="mt-6 text-center">
+                {address ? (
+                    <div className="mt-6 text-center p-4 bg-green-100 border-l-4 border-green-500 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                        <p className="text-lg font-semibold text-gray-800">
+                            <span className="text-green-700">Address:</span> {address}
+                        </p>
+                    </div>
+                ) : (
+                    <div className="mt-6 text-center p-4 bg-yellow-100 border-l-4 border-yellow-500 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl">
+                        <p className="text-lg text-gray-800">
+                            Loading address...
+                        </p>
+                    </div>
+                )}
+
+            </div>
         </div>
     );
 };
