@@ -1,0 +1,147 @@
+import React, { useEffect, useState } from "react";
+import { CgShapeRhombus } from "react-icons/cg";
+import { FaLongArrowAltUp } from "react-icons/fa";
+import { IoMailOutline } from "react-icons/io5";
+import { MdOutlineCall } from "react-icons/md";
+
+
+export function meta() {
+    return {
+        title: "Contact Us - Solar Cleaner Shop",
+        description: "Reach out to Solar Cleaner Shop for any inquiries or support. Learn more about our services, contact details, and business hours.",
+        keywords: [
+            "Contact Solar Cleaner Shop",
+            "Solar Panel Cleaning Services",
+            "Renewable Energy Solutions",
+            "Customer Support Solar Cleaner",
+            "Eco-friendly cleaning services"
+        ],
+        author: "Solar Cleaner Shop",
+        canonical: "https://www.solarcleanershop.com/contact",
+        og: {
+            title: "Contact Us - Solar Cleaner Shop",
+            description: "Get in touch with us for support or to learn more about our solar panel cleaning services.",
+            image: "https://149356857.v2.pressablecdn.com/wp-content/uploads/2024/03/46_1.jpg",
+            url: "https://www.solarcleanershop.com/contact",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Contact Us - Solar Cleaner Shop",
+            description: "We are here to assist you with any inquiries related to solar panel cleaning and eco-friendly solutions.",
+            image: "https://149356857.v2.pressablecdn.com/wp-content/uploads/2024/03/46_1.jpg",
+        },
+    };
+}
+
+const ContactPage = () => {
+    const images = [
+        "https://thumbs.dreamstime.com/b/woman-worker-cleaning-solar-panels-installation-outdoors-335222905.jpg",
+        "https://hekabot.com/wp-content/uploads/2023/07/1-1024x576.jpeg",
+        "https://cdn.create.vista.com/api/media/small/620425768/stock-photo-indain-village-farmer-cleaning-water-solar-panels-farmland-concept-renewable",
+        "https://hycleaner.de/wp-content/uploads/2024/05/Vorlage_6100x638_grossesBild_Beitragsbild_webp-scaled.webp",
+        "https://ejq4r5ztkxr.exactdn.com/wp-content/uploads/2022/12/Solar-panels.jpg",
+        "https://149356857.v2.pressablecdn.com/wp-content/uploads/2024/03/46_1.jpg",
+    ]
+    const [currentImageIndex, setCurrentImageIndex] = useState(0)
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        }, 2000); // Change image every 2 seconds
+
+        return () => clearInterval(interval); // Cleanup on component unmount
+    }, [images.length])
+    return (
+        <div className="pt-10">
+            <div id="contact" className="bg-gray-100 min-h-full flex flex-col justify-center items-center px-4 py-10">
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl font-bold text-gray-800 mb-4">Contact Us</h1>
+                    <p className="text-lg text-gray-600">
+                        Reach out to us for any inquiries or support. We're here to help!
+                    </p>
+                </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-6xl">
+
+                    <div className="relative">
+                        <div className="relative w-full h-96 overflow-hidden rounded-lg shadow-lg">
+                            <img
+                                src={images[currentImageIndex]}
+                                alt={`Carousel Image ${currentImageIndex + 1}`}
+                                className="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                            />
+                        </div>
+                        <div className="flex justify-center mt-4 space-x-2">
+                            {images.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setCurrentImageIndex(index)}
+                                    className={`w-3 h-3 rounded-full ${index === currentImageIndex
+                                        ? "bg-blue-500"
+                                        : "bg-gray-400"
+                                        }`}
+                                ></button>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-yellow-50 to-white shadow-xl rounded-xl p-8 h-full">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center border-b-2 border-yellow-500 pb-4">
+                            Our Details
+                        </h2>
+                        <ul className="grid gap-8">
+                            <li className="flex items-start group cursor-pointer">
+                                <span className="w-12 h-12 bg-yellow-500 text-white flex items-center justify-center rounded-full shadow-lg mr-6 group-hover:scale-110 transition-transform">
+                                    <FaLongArrowAltUp className="text-2xl" />
+                                </span>
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-yellow-500 transition-colors">
+                                        Address
+                                    </h3>
+                                    <p className="text-gray-600">
+                                        123 Solar Street, Eco City, Renewable State, 45678
+                                    </p>
+                                </div>
+                            </li>
+                            <li className="flex items-start group cursor-pointer">
+                                <span onClick={() => window.location.href = "tel:+91(123) 456-7890"} className="w-12 h-12 bg-yellow-500 text-white flex items-center justify-center rounded-full shadow-lg mr-6 group-hover:scale-110 transition-transform">
+                                    <MdOutlineCall className="text-2xl" />
+                                </span>
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-yellow-500 transition-colors">
+                                        Phone
+                                    </h3>
+                                    <p className="text-gray-600">(123) 456-7890</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start group cursor-pointer">
+                                <span className="w-12 h-12 bg-yellow-500 text-white flex items-center justify-center rounded-full shadow-lg mr-6 group-hover:scale-110 transition-transform">
+                                    <IoMailOutline className="text-2xl" />
+                                </span>
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-yellow-500 transition-colors">
+                                        Email
+                                    </h3>
+                                    <p className="text-gray-600">info@solarcleanershop.com</p>
+                                </div>
+                            </li>
+                            <li className="flex items-start group cursor-pointer">
+                                <span className="w-12 h-12 bg-yellow-500 text-white flex items-center justify-center rounded-full shadow-lg mr-6 group-hover:scale-110 transition-transform">
+                                    <CgShapeRhombus className="text-2xl" />
+                                </span>
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-yellow-500 transition-colors">
+                                        Business Hours
+                                    </h3>
+                                    <p className="text-gray-600">
+                                        Mon - Fri: 9:00 AM - 6:00 PM <br />
+                                        Sat: 10:00 AM - 4:00 PM
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default ContactPage

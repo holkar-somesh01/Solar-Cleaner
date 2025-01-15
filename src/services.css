@@ -1,0 +1,61 @@
+.services-wrapper {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px;
+    background-color: red;
+}
+
+.services-wrapper::-webkit-scrollbar {
+    display: none;
+    /* Hide scrollbar */
+}
+
+.card {
+    flex: 0 0 calc(33.333% - 20px);
+    /* 3 cards visible at a time with gap */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    text-align: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 0 0 calc(50% - 20px);
+        /* 2 cards visible on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 0 0 calc(100% - 20px);
+        /* 1 card visible on smallest screens */
+    }
+}
+
+/* services.css */
+@keyframes scroll-animation {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: scroll-animation 20s linear infinite;
+}
