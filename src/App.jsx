@@ -8,6 +8,7 @@ import About from './pages/About'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import LocationScreen from './pages/LocationScreen'
+import NotFound from './pages/NotFound'
 
 const App = () => {
   return <>
@@ -23,7 +24,7 @@ const App = () => {
         <Route path='/footer' element={<Footer />} />
         <Route path='/location' element={<LocationScreen />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='*' element={<h1>Page Not Found</h1>} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter >
 
