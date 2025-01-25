@@ -12,7 +12,6 @@ const Navbar = () => {
         <>
             {/* Meta Data */}
             <Helmet>
-                <title>Navbar - Solar Cleaner</title>
                 <meta
                     name="description"
                     content="Responsive navigation bar for the Solar Cleaner website, providing quick access to Home, Services, About, and Contact sections."

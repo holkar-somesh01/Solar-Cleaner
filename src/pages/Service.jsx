@@ -61,7 +61,6 @@ const Service = () => {
     return (
         <>
             <Helmet>
-                <title>Our Services - Solar Solutions</title>
                 <meta
                     name="description"
                     content="Explore our wide range of solar solutions including cleaning, maintenance, installation, and system upgrades. Experience professional services tailored to meet your needs."

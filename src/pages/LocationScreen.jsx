@@ -31,7 +31,6 @@ const LocationScreen = () => {
         <>
             {/* Meta Data */}
             <Helmet>
-                <title>Shop Location - Solar Cleaner</title>
                 <meta
                     name="description"
                     content="View the shop location of Solar Cleaner on an interactive map. Address details are displayed using real-time location data."

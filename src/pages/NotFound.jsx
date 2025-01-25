@@ -6,7 +6,6 @@ const NotFound = () => {
         <>
             {/* Meta Data */}
             <Helmet>
-                <title>404 - Page Not Found</title>
                 <meta
                     name="description"
                     content="The page you are looking for does not exist or has been removed. Return to the homepage or contact us for further assistance."
