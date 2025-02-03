@@ -49,6 +49,7 @@
 import React, { useEffect, useState } from "react";
 import { FaArrowDown } from "react-icons/fa";
 import solar from "../assets/solar.mp4";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
     const [showScrollUp, setShowScrollUp] = useState(false)
@@ -72,6 +73,24 @@ const Home = () => {
             id="home"
             className="relative bg-gray-900 text-white text-center py-20 min-h-screen flex items-center justify-center overflow-hidden"
         >
+            <Helmet>
+                <meta
+                    name="description"
+                    content="Maximize your solar energy efficiency with our eco-friendly solar panel cleaning services. Shine bright with clean panels and increased performance."
+                />
+                <meta
+                    name="keywords"
+                    content="solar panel cleaning, eco-friendly cleaning, solar efficiency, solar maintenance, renewable energy, solar power"
+                />
+                <meta name="author" content="Solar Cleaner Shop" />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="https://example.com/thumbnail-image.jpg" />
+                <meta property="og:description" content="Enhance your solar power system's performance with our professional solar panel cleaning services. Keep your solar panels spotless and efficient!" />
+                <meta property="og:url" content="https://www.solarcleanershop.com" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:image" content="https://example.com/thumbnail-image.jpg" />
+                <meta name="twitter:description" content="Expert solar panel cleaning services that help you maximize energy efficiency and keep your system in optimal condition." />
+            </Helmet>
             <video
                 className="absolute top-0 left-0 w-full h-full object-cover"
                 src={solar}

@@ -1,9 +1,24 @@
+import { Helmet } from "react-helmet-async";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa"
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
     return (
         <footer className="bg-gradient-to-r to-slate-800 from-violet-950 text-white py-12 px-10 mt-12">
+            <Helmet>
+                <meta name="description" content="Solar Cleaner Shop provides expert solar panel cleaning and maintenance services to keep your solar energy system efficient and clean. Contact us for more details." />
+                <meta name="keywords" content="solar panel cleaning, solar panel maintenance, eco-friendly solar cleaning, renewable energy, solar services" />
+                <meta name="author" content="Solar Cleaner Shop" />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content="Solar Cleaner Shop - Professional Solar Panel Cleaning Services" />
+                <meta property="og:description" content="Keep your solar panels efficient with our professional cleaning services. Eco-friendly solutions for long-term performance." />
+                <meta property="og:image" content="https://example.com/solar-cleaner-image.jpg" />
+                <meta property="og:url" content="https://www.solarcleanershop.com" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Solar Cleaner Shop - Solar Panel Cleaning Services" />
+                <meta name="twitter:description" content="Solar Cleaner Shop offers expert solar panel cleaning services. Increase the efficiency and longevity of your solar energy system." />
+                <meta name="twitter:image" content="https://example.com/solar-cleaner-image.jpg" />
+            </Helmet>
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center lg:text-left">
                 <div>
                     <h3 className="text-2xl font-bold mb-4 text-yellow-400">About Us</h3>
@@ -88,6 +103,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
