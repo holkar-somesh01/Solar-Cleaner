@@ -12,22 +12,18 @@ const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     useEffect(() => {
-        // Automatically change slide every 5 seconds
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-        }, 5000);
-
-        return () => clearInterval(interval); // Cleanup interval on component unmount
-    }, [slides.length]);
+        }, 5000)
+        return () => clearInterval(interval)
+    }, [slides.length])
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    };
-
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length)
+    }
     const handlePrev = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + slides.length) % slides.length);
-    };
-
+    }
     return (
         <div>
             {/* Helmet Metadata */}

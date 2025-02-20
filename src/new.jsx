@@ -1,7 +1,3 @@
-
-
-
-
 import React from 'react';
 import { motion } from "framer-motion"
 
@@ -9,9 +5,7 @@ const About = () => {
     return (
         <div>
             <div id="about" className="h-full py-20 px-10 bg-white">
-                {/* About Section */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10">
-                    {/* Images Section */}
                     <div className="flex flex-col gap-6 items-center lg:w-1/2">
                         <div className="flex gap-4">
                             <motion.img

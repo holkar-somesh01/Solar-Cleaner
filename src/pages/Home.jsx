@@ -71,8 +71,7 @@ const Home = () => {
     return (
         <section
             id="home"
-            className="relative bg-gray-900 text-white text-center py-20 min-h-screen flex items-center justify-center overflow-hidden"
-        >
+            className="relative bg-gray-900 text-white text-center py-20 min-h-screen flex items-center justify-center overflow-hidden">
             <Helmet>
                 <meta
                     name="description"

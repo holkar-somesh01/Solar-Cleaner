@@ -29,7 +29,6 @@ const LocationScreen = () => {
 
     return (
         <>
-            {/* Meta Data */}
             <Helmet>
                 <meta
                     name="description"
@@ -40,7 +39,6 @@ const LocationScreen = () => {
                 <meta charSet="UTF-8" />
             </Helmet>
 
-            {/* LocationScreen Component */}
             <div className="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg mt-10 z-0">
                 <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Shop Location</h2>
 

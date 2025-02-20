@@ -10,7 +10,6 @@ const Navbar = () => {
 
     return (
         <>
-            {/* Meta Data */}
             <Helmet>
                 <meta
                     name="description"
@@ -20,8 +19,6 @@ const Navbar = () => {
                 <meta name="robots" content="index, follow" />
                 <meta charSet="UTF-8" />
             </Helmet>
-
-            {/* Navbar Component */}
             <nav className="bg-white text-black shadow-lg shadow-slate-300">
                 <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                     <div className="text-2xl font-bold">

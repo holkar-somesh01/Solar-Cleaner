@@ -27,7 +27,6 @@ const HomePage = () => {
 
     return (
         <div>
-
             <Helmet>
                 <title>Solar Cleaner Shop</title>
                 <meta

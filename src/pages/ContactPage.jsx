@@ -19,16 +19,14 @@ const ContactPage = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 2000); // Change image every 2 seconds
+        }, 2000)
 
-        return () => clearInterval(interval); // Cleanup on component unmount
+        return () => clearInterval(interval)
     }, [images.length]);
 
     return (
         <div id="contact" className="pt-10">
-            {/* Helmet for Metadata */}
             <Helmet>
-                {/* <title>Contact Us - Solar Cleaner Shop</title> */}
                 <meta
                     name="description"
                     content="Reach out to Solar Cleaner Shop for any inquiries or support. Learn more about our services, contact details, and business hours."

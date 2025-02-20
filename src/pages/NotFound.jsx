@@ -4,7 +4,6 @@ import { Helmet } from "react-helmet-async";
 const NotFound = () => {
     return (
         <>
-            {/* Meta Data */}
             <Helmet>
                 <meta
                     name="description"
@@ -14,8 +13,6 @@ const NotFound = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <meta charSet="UTF-8" />
             </Helmet>
-
-            {/* 404 Page Content */}
             <div className="flex items-center justify-center h-screen bg-black text-white">
                 <div className="text-center">
                     <h1 className="text-[10rem] font-extrabold leading-none">404</h1>
