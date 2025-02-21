@@ -1,5 +1,4 @@
 import React from 'react'
-import Home from './pages/Home'
 import Footer from './pages/Footer'
 import Navbar from './pages/Navbar'
 import Service from './pages/Service'
