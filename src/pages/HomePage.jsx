@@ -70,7 +70,7 @@ const HomePage = () => {
             {showScrollUp && (
                 <motion.button
                     onClick={scrollToTop}
-                    className="fixed bottom-5 right-5 bg-yellow-500 text-white p-3 px-5 rounded-full shadow-lg hover:bg-yellow-600 transition-all z-10"
+                    className="fixed bottom-5 font-extrabold right-5 bg-yellow-500 text-white p-3 px-5 rounded-full shadow-lg hover:bg-yellow-600 transition-all z-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}

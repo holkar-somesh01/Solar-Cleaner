@@ -25,16 +25,16 @@ const Navbar = () => {
                         <a href="#home">Solar Cleaner</a>
                     </div>
                     <ul className="hidden md:flex space-x-6">
-                        <li>
+                        <li className="font-semibold">
                             <a href="#home" className="hover:text-yellow-500">Home</a>
                         </li>
-                        <li>
+                        <li className="font-semibold">
                             <a href="#service" className="hover:text-yellow-500">Services</a>
                         </li>
-                        <li>
+                        <li className="font-semibold">
                             <a href="#about" className="hover:text-yellow-500">About</a>
                         </li>
-                        <li>
+                        <li className="font-semibold">
                             <a href="#contact" className="hover:text-yellow-500">Contact</a>
                         </li>
                     </ul>
