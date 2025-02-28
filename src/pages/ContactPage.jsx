@@ -133,6 +133,12 @@ const ContactPage = () => {
                                     </h3>
                                     <p className="text-gray-600">info@solarcleanershop.com</p>
                                 </div>
+                                {/* <div>
+                                    <h3 className="text-lg font-semibold text-gray-800 group-hover:text-yellow-500 transition-colors">
+                                        Email
+                                    </h3>
+                                    <p className="text-gray-600">info@solarcleanershop.com</p>
+                                </div> */}
                             </li>
                             <li className="flex items-start group cursor-pointer">
                                 <span className="w-12 h-12 bg-yellow-500 text-white flex items-center justify-center rounded-full shadow-lg mr-6 group-hover:scale-110 transition-transform">
